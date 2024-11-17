@@ -13,6 +13,8 @@ Train five different tokenizers on samples of the dataset and evaluate them base
 
 1. **Whitespace Tokenizer**
    - **Description**: Splits text into tokens based on spaces, tabs, or newlines.
+   - **Fertility Scores**: Ranged from **1.00** to **1.319**.
+   - **Observation**: The scores are relatively stable, with **Part 1** showing the highest fertility score. The Whitespace Tokenizer produces a moderate number of tokens, similar to SentencePiece.
    - **Advantages**: Simple and easy to implement.
    - **Disadvantages**: 
      - Lacks subword-level tokenization.
@@ -20,6 +22,8 @@ Train five different tokenizers on samples of the dataset and evaluate them base
 
 2. **Character-level Tokenizer**
    - **Description**: Breaks text into individual characters, including letters, punctuation, and spaces.
+   - **Fertility Scores**: Ranged from **1.00** to **1.314**.
+   - **Observation**: The Character-level Tokenizer shows consistent fertility scores with some variation across parts. The results are similar to those of the Whitespace Tokenizer, suggesting that it breaks text into smaller units with moderate efficiency.
    - **Advantages**: 
      - Highly flexible.
      - Useful for tasks requiring fine-grained analysis, such as spelling correction or languages with small alphabets.
@@ -29,6 +33,8 @@ Train five different tokenizers on samples of the dataset and evaluate them base
 
 3. **Byte-Pair Encoding (BPE) Tokenizer**
    - **Description**: Uses a data-driven approach to iteratively merge frequent character pairs into subwords.
+   - **Fertility Scores**: Ranged from **3.01** to **3.91** across all five parts.
+   - **Observation**: Byte Level Tokenizer generates more tokens, resulting in higher fertility scores. The scores increase across parts, which may lead to longer sequences, potentially affecting efficiency.
    - **Advantages**: 
      - Effectively reduces sequence lengths.
      - Handles unseen words flexibly.
@@ -38,6 +44,8 @@ Train five different tokenizers on samples of the dataset and evaluate them base
 
 4. **SentencePiece Tokenizer**
    - **Description**: Operates on raw text and treats spaces as tokens, making it language-agnostic.
+   - **Fertility Scores**: Ranged from **1.013** to **1.372** across the five parts.
+   - **Observation**: The fertility scores are moderate and relatively stable. **Part 1** has the highest score, while subsequent parts show slightly lower scores. This indicates a balanced tokenization process.
    - **Advantages**: 
      - Compact and versatile in subword tokenization.
      - Handles unseen data effectively.
@@ -47,11 +55,19 @@ Train five different tokenizers on samples of the dataset and evaluate them base
 
 5. **WordPiece Tokenizer**
    - **Description**: Segments text into meaningful subwords based on vocabulary likelihood.
+   - **Fertility Scores**: Ranged from **0.0005** to **0.567**.
+   - **Observation**: WordPiece produces the lowest fertility scores, particularly in **Part 2** and **Part 3**, with extremely low scores (close to **0.0005**). This indicates that WordPiece is highly efficient at tokenizing, producing very few tokens for the input text.
    - **Advantages**: 
      - Balances vocabulary size and sequence length efficiently.
      - Robust in handling rare or unseen words by splitting them into subwords.
      - Widely used in successful models like BERT.
    - **Disadvantages**: None significant for general NLP tasks.
+
+
+## Conclusion
+- **Most Efficient**: WordPiece tokenizer, with the lowest fertility scores.
+- **Least Efficient**: Byte Level Tokenizer, which generates the most tokens.
+
 
 ### **Chosen Tokenizer: WordPiece**
 We found that the **WordPiece Tokenizer** works best for our dataset due to its ability to efficiently balance vocabulary size and sequence length. By segmenting words into meaningful subwords, WordPiece enables the model to capture more granular semantic representations, especially for rare or unseen words. This flexibility in handling out-of-vocabulary (OOV) words without losing context makes it particularly well-suited for our dataset, which contains varied and complex text patterns. Furthermore, WordPiece's integration into successful models like BERT demonstrates its robustness and effectiveness, making it the optimal choice for our task.
@@ -111,6 +127,8 @@ This project implements a **BERT-based Masked Language Model (MLM)** with optimi
 ## Outputs
 - **Final Model**: Saved in the `quantized_lora_bert` directory.
 - **Perplexity Log**: Captured in `perplexity_log.txt` for detailed performance tracking.
+
+---
 
 # Model Training Perplexity Log
 
