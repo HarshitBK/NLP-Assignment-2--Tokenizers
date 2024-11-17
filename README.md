@@ -3,6 +3,19 @@
 This assignment involves training tokenizers, evaluating their performance, and training a model under specific constraints. The tasks and methodologies are outlined below.
 
 ---
+# Contribution Table
+
+| **Contributor(s)**                    | **Task**                                                                                           | **Points** |
+|---------------------------------------|----------------------------------------------------------------------------------------------------|------------|
+| **Harshit**                           | - Show the matrix with the fertility score and dataset size.                                         | 5 Pts      |
+|                                       | - Show the matrix with perplexity for each epoch and test the model's output for 10 prompts.        | 10 Pts     |
+| **Hirva, Harshit, Khushal, Harshi**   | - Train 5 Tokenizers on five samples from the dataset you had scraped from the earlier assignment.  | 25 Pts     |
+|                                       | - Calculate the fertility score of all the five Tokenizers that you have trained.                   | 20 Pts     |
+| **Khushal and Harshi**                | - Tokenize your dataset using the best tokenizer you trained in Task 1.                             | 5 Pts      |
+|                                       | - Train your model using the tokenized dataset. Note down the perplexity of your model for every 0.1 epoch. | 10 Pts     |
+| **Rushi**                             | - Choose any of the predefined model architectures & adjust it in such a way that its total parameters are less than 100M. | 25 Pts     |
+|                                       | - Reporting the results and Documentation.                                                        | -          |
+
 
 ## **Task 1: Tokenizer Training**
 
