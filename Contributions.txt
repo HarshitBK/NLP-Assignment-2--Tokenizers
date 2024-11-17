@@ -1,0 +1,10 @@
+Contribution:
+Hirva: Trained five different tokenizers on samples from the dataset, tested and compared their performance, and contributed to selecting the best tokenizer based on fertility scores.
+
+Harshit: Calculated the fertility scores for each tokenizer, analyzed the results to find the most effective tokenizer, and created a comparison matrix showing fertility scores and dataset sizes.
+
+Khushal: Used the best tokenizer from Task 1 to tokenize the entire dataset, prepared the tokenized data for model training, and optimized the tokenization process for efficient data handling.
+
+Harshi: Trained the model on the tokenized dataset, recorded perplexity scores for each 0.1 epoch, created a matrix showing perplexity per epoch, and tested model outputs on 10 prompts to evaluate performance.
+
+Rushi: Selected a predefined model architecture and adjusted its structure to reduce parameters below 100M, ensuring the model met size constraints while maintaining performance.
