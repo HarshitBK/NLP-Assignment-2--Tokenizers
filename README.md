@@ -112,6 +112,32 @@ This project implements a **BERT-based Masked Language Model (MLM)** with optimi
 - **Final Model**: Saved in the `quantized_lora_bert` directory.
 - **Perplexity Log**: Captured in `perplexity_log.txt` for detailed performance tracking.
 
+# Model Training Perplexity Log
+
+## Overview of Perplexity Changes
+
+The following observations highlight the changes in **perplexity** over the course of the 3 epochs of training. Perplexity is a measure used to evaluate the performance of a language model, where lower values indicate better model performance. As perplexity decreases, it shows that the model is learning better representations of the data.
+
+### Epoch 1
+- The perplexity starts at **109.45** at step 1 and decreases to **96.23** by step 10. This reflects the model's initial phase of learning, where it gradually adapts to the dataset.
+
+### Epoch 2
+- Perplexity continues to drop significantly during the second epoch, starting at **95.67** in step 1 and finishing at **81.23** by step 10. This decrease indicates that the model is refining its predictions and getting better at capturing patterns in the data.
+
+### Epoch 3
+- By the third epoch, the model's perplexity reaches its lowest values, starting at **79.67** in step 1 and ending at **70.34** by step 10. This demonstrates that the model is nearing convergence and has effectively learned from the dataset.
+
+## Observations
+
+- **Decreasing Perplexity**: As the number of epochs increases, the model's perplexity consistently decreases, which indicates an improvement in the language model’s ability to predict words. This is expected behavior during training as the model learns more from the data over time.
+
+- **Training Progress**: From the first to the third epoch, the perplexity reduces significantly, indicating that the model is becoming more accurate with each epoch. The reduction in perplexity is a sign of improved generalization and better language understanding.
+
+## Conclusion
+
+Increasing the number of epochs results in progressively lower perplexity values. This suggests that with more training, the model is becoming more accurate in its predictions, capturing linguistic structures, and adapting to the dataset. A lower perplexity value at the end of the third epoch reflects the model’s ability to better understand the text and predict the next words with higher confidence.
+
+
 ---
 
 ## **Model Evaluation: Prompts and Predictions**
