@@ -182,3 +182,6 @@ Increasing the number of epochs results in progressively lower perplexity values
 3. Adjusted model with <100M parameters.
 4. Training logs with perplexity scores for every 0.1 epoch.
 5. Perplexity matrix and outputs for 10 test prompts.
+
+## **Note**:- The tokenized dataset is uploaded to the server
+
